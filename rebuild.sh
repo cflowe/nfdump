@@ -15,5 +15,5 @@ autoreconf --force --install
 	--enable-nfprofile \
 	--enable-readpcap
 
-make DESTDIR=${DESTDIR:-/home/cflowe/install/nfdump}
-make install DESTDIR=${DESTDIR:-/home/cflowe/install/nfdump}
+make DESTDIR=${DESTDIR:-$HOME/install/nfdump}
+make install DESTDIR=${DESTDIR:-$HOME/install/nfdump}
