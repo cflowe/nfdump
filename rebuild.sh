@@ -4,6 +4,8 @@ set -eu -o pipefail
 
 script_dir=$(cd "$(dirname $0)" && pwd -P)
 
+source "${script_dir}/setup.sh"
+
 if [ -f Makefile ]; then
   make maintainer-clean
 fi
@@ -15,5 +17,5 @@ autoreconf --force --install
 	--enable-nfprofile \
 	--enable-readpcap
 
-make DESTDIR=${DESTDIR:-$HOME/install/nfdump}
-make install DESTDIR=${DESTDIR:-$HOME/install/nfdump}
+make DESTDIR="$DESTDIR"
+make install DESTDIR="$DESTDIR"
