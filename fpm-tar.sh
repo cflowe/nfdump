@@ -3,7 +3,7 @@
 set -eu -o pipefail
 
 : ${DESTDIR:=${HOME}/install/nfdump}
-version=$(git describe --tags)
+version=$(git describe --tags --abbrev=0)
 name="nfdump-${version}"
 
 ./configure "--prefix=${DESTDIR}/usr"
