@@ -14,4 +14,4 @@ install -D /dev/stdin "${DESTDIR}/usr/share/nfdump/VERSION" <<<"$version"
 
 fpm -s dir -t tar -n "$name" -C ${DESTDIR}
 
-bzip2 "${name}.tar"
+gzip "${name}.tar"
